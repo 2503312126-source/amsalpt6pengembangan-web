@@ -1,0 +1,54 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | Universitas Satya Terra Bhinneka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="login-page">
+
+    <main class="login-container">
+        <section class="login-brand">
+            <img src="assets/logo.png" alt="Logo Universitas Satya Terra Bhinneka">
+            <p class="eyebrow">UNIVERSITY PORTAL</p>
+            <h1>Universitas<br><span>Satya Terra Bhinneka</span></h1>
+            <p class="brand-description">
+                Sistem Informasi Akademik Terintegrasi
+            </p>
+            <div class="gold-line"></div>
+            <p class="brand-footer">EXCELLENCE · INTEGRITY · INNOVATION</p>
+        </section>
+
+        <section class="login-panel">
+            <div class="login-card">
+                <p class="eyebrow">SELAMAT DATANG KEMBALI</p>
+                <h2>Login Akun</h2>
+                <p class="muted">Silakan masuk untuk melanjutkan.</p>
+
+                <form id="loginForm">
+                    <label for="username">Username</label>
+                    <input type="text" id="username"
+                           placeholder="Masukkan username" required>
+
+                    <label for="password">Password</label>
+                    <input type="password" id="password"
+                           placeholder="Masukkan password" required>
+
+                    <button type="submit" class="gold-button">
+                        Masuk ke Dashboard
+                    </button>
+                    <p id="loginMessage" class="message"></p>
+                </form>
+
+                <p class="login-note">
+                    © 2026 Universitas Satya Terra Bhinneka
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

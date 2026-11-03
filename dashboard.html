@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Universitas Satya Terra Bhinneka</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dashboard-page">
+
+    <aside class="sidebar">
+        <div class="side-brand">
+            <img src="assets/logo.png" alt="Logo Universitas">
+            <h2>ST Bhinneka</h2>
+            <p>UNIVERSITY PORTAL</p>
+        </div>
+
+        <p class="nav-label">MENU UTAMA</p>
+        <nav class="side-nav" id="sideNav">
+            <button class="nav-button active" data-page="overview">
+                <span>▦</span> Dashboard
+            </button>
+            <button class="nav-button" data-page="students">
+                <span>♙</span> Data Mahasiswa
+            </button>
+            <button class="nav-button" data-page="lecturers">
+                <span>♧</span> Data Dosen
+            </button>
+            <button class="nav-button" data-page="academic">
+                <span>▤</span> Akademik
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <button id="logoutBtn" class="logout-button">
+                ↪ Keluar
+            </button>
+        </div>
+    </aside>
+
+    <main class="main-content">
+        <header class="topbar">
+            <div>
+                <p class="eyebrow">UNIVERSITY MANAGEMENT SYSTEM</p>
+                <h1 id="pageTitle">Dashboard</h1>
+            </div>
+            <div class="admin-profile">
+                <div class="avatar">A</div>
+                <div>
+                    <strong>Administrator</strong>
+                    <small>Admin Portal</small>
+                </div>
+            </div>
+        </header>
+
+        <section id="overviewPage" class="page-section">
+            <div class="welcome-panel">
+                <div>
+                    <p class="eyebrow">SELAMAT DATANG</p>
+                    <h2>Portal Akademik Universitas</h2>
+                    <p>Kelola informasi akademik dalam satu tempat.</p>
+                </div>
+                <div class="welcome-mark">STB</div>
+            </div>
+
+            <div class="stats-grid">
+                <article class="stat-card">
+                    <span class="stat-icon">♙</span>
+                    <p>Total Mahasiswa</p>
+                    <h3 id="studentCount">0</h3>
+                    <small>Data terdaftar</small>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon">♧</span>
+                    <p>Total Dosen</p>
+                    <h3 id="lecturerCount">0</h3>
+                    <small>Data terdaftar</small>
+                </article>
+                <article class="stat-card">
+                    <span class="stat-icon">▤</span>
+                    <p>Program Akademik</p>
+                    <h3>Aktif</h3>
+                    <small>Sistem akademik</small>
+                </article>
+            </div>
+
+            <section class="content-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">INFORMASI TERBARU</p>
+                        <h2>Mahasiswa Terbaru</h2>
+                    </div>
+                </div>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nama Mahasiswa</th>
+                                <th>NIM</th>
+                                <th>Program Studi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="recentStudents"></tbody>
+                    </table>
+                </div>
+            </section>
+        </section>
+
+        <section id="dataPage" class="page-section" hidden>
+            <section class="content-card">
+                <div class="section-heading">
+                    <div>
+                        <p class="eyebrow">MANAJEMEN DATA</p>
+                        <h2 id="dataHeading">Data</h2>
+                        <p class="muted" id="dataDescription">Kelola data universitas.</p>
+                    </div>
+                    <button class="gold-button small-button" id="addRecordBtn">
+                        + Tambah Data
+                    </button>
+                </div>
+
+                <input type="search" id="tableSearch"
+                       class="search-input" placeholder="Cari data...">
+
+                <div class="table-wrap">
+                    <table>
+                        <thead id="dynamicHead"></thead>
+                        <tbody id="dynamicBody"></tbody>
+                    </table>
+                </div>
+                <p id="recordCount" class="muted"></p>
+                <p id="emptyState" class="muted" hidden>Belum ada data.</p>
+            </section>
+        </section>
+
+        <footer class="dashboard-footer">
+            © 2026 Universitas Satya Terra Bhinneka · Academic Portal
+        </footer>
+    </main>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+        <div class="modal">
+            <button class="modal-close" id="closeModal">×</button>
+            <p class="eyebrow">FORMULIR DATA</p>
+            <h2 id="modalTitle">Tambah Data</h2>
+            <form id="recordForm">
+                <div id="formFields"></div>
+                <div class="modal-actions">
+                    <button type="button" class="secondary-button" id="cancelModal">
+                        Batal
+                    </button>
+                    <button type="submit" class="gold-button small-button">
+                        Simpan Data
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
